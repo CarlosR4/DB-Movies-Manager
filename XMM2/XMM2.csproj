@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGenre.Designer.cs">
+      <DependentUpon>EditGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditGenre.resx">
+      <DependentUpon>EditGenre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditMember.resx">
       <DependentUpon>EditMember.cs</DependentUpon>
     </EmbeddedResource>
