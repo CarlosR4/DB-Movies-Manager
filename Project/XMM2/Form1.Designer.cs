@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.moviesListView = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.modifyButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -41,18 +41,18 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.yearTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ratingTextBox = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.imagePathTextBox = new System.Windows.Forms.TextBox();
+            this.lengthTtextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.genreComboBox = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -71,14 +71,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // moviesListView
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(513, 400);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.moviesListView.HideSelection = false;
+            this.moviesListView.Location = new System.Drawing.Point(12, 12);
+            this.moviesListView.Name = "moviesListView";
+            this.moviesListView.Size = new System.Drawing.Size(513, 400);
+            this.moviesListView.TabIndex = 0;
+            this.moviesListView.UseCompatibleStateImageBehavior = false;
             // 
             // pictureBox1
             // 
@@ -89,14 +89,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // exitButton
             // 
-            this.button1.Location = new System.Drawing.Point(1177, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.exitButton.Location = new System.Drawing.Point(1177, 235);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(162, 49);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // button2
             // 
@@ -116,14 +117,14 @@
             this.button3.Text = "Add member";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // modifyButton
             // 
-            this.button4.Location = new System.Drawing.Point(553, 492);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(179, 44);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Modify movie";
-            this.button4.UseVisualStyleBackColor = true;
+            this.modifyButton.Location = new System.Drawing.Point(553, 492);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(179, 44);
+            this.modifyButton.TabIndex = 5;
+            this.modifyButton.Text = "Modify movie";
+            this.modifyButton.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -186,19 +187,19 @@
             this.comboBox2.Size = new System.Drawing.Size(162, 24);
             this.comboBox2.TabIndex = 12;
             // 
-            // textBox1
+            // titleTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 479);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 22);
-            this.textBox1.TabIndex = 13;
+            this.titleTextBox.Location = new System.Drawing.Point(90, 479);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(162, 22);
+            this.titleTextBox.TabIndex = 13;
             // 
-            // textBox2
+            // yearTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(90, 555);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 22);
-            this.textBox2.TabIndex = 14;
+            this.yearTextBox.Location = new System.Drawing.Point(90, 555);
+            this.yearTextBox.Name = "yearTextBox";
+            this.yearTextBox.Size = new System.Drawing.Size(162, 22);
+            this.yearTextBox.TabIndex = 14;
             // 
             // label3
             // 
@@ -254,12 +255,12 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Member:";
             // 
-            // textBox3
+            // ratingTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(363, 516);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 22);
-            this.textBox3.TabIndex = 21;
+            this.ratingTextBox.Location = new System.Drawing.Point(363, 516);
+            this.ratingTextBox.Name = "ratingTextBox";
+            this.ratingTextBox.Size = new System.Drawing.Size(162, 22);
+            this.ratingTextBox.TabIndex = 21;
             // 
             // comboBox3
             // 
@@ -269,19 +270,19 @@
             this.comboBox3.Size = new System.Drawing.Size(162, 24);
             this.comboBox3.TabIndex = 22;
             // 
-            // textBox4
+            // imagePathTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(363, 479);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 22);
-            this.textBox4.TabIndex = 23;
+            this.imagePathTextBox.Location = new System.Drawing.Point(363, 479);
+            this.imagePathTextBox.Name = "imagePathTextBox";
+            this.imagePathTextBox.Size = new System.Drawing.Size(162, 22);
+            this.imagePathTextBox.TabIndex = 23;
             // 
-            // textBox5
+            // lengthTtextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(363, 439);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(162, 22);
-            this.textBox5.TabIndex = 24;
+            this.lengthTtextBox.Location = new System.Drawing.Point(363, 439);
+            this.lengthTtextBox.Name = "lengthTtextBox";
+            this.lengthTtextBox.Size = new System.Drawing.Size(162, 22);
+            this.lengthTtextBox.TabIndex = 24;
             // 
             // label9
             // 
@@ -368,13 +369,13 @@
             this.label14.TabIndex = 34;
             this.label14.Text = "Genre:";
             // 
-            // comboBox6
+            // genreComboBox
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(1177, 67);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(162, 24);
-            this.comboBox6.TabIndex = 35;
+            this.genreComboBox.FormattingEnabled = true;
+            this.genreComboBox.Location = new System.Drawing.Point(1177, 67);
+            this.genreComboBox.Name = "genreComboBox";
+            this.genreComboBox.Size = new System.Drawing.Size(162, 24);
+            this.genreComboBox.TabIndex = 35;
             // 
             // button8
             // 
@@ -417,7 +418,7 @@
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.genreComboBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.label13);
@@ -428,18 +429,18 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.lengthTtextBox);
+            this.Controls.Add(this.imagePathTextBox);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.ratingTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.yearTextBox);
+            this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -447,14 +448,15 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.modifyButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.moviesListView);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -463,12 +465,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView moviesListView;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
@@ -476,18 +478,18 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox titleTextBox;
+        private System.Windows.Forms.TextBox yearTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ratingTextBox;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox imagePathTextBox;
+        private System.Windows.Forms.TextBox lengthTtextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -498,7 +500,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox genreComboBox;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
