@@ -27,7 +27,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "postgres", "yvnft9k", "moviedatabase");
+            SetDBConnection("localhost", "username", "password", "movie_db");
             // =============================================================
 
 
@@ -70,28 +70,37 @@ namespace XMM2
 
             Console.WriteLine("\n=================");
 
-            //Read each line present in the dataReader
-            while (dataReader.Read())
+            try
             {
+                //Read each line present in the dataReader
+                while (dataReader.Read())
+                {
 
-                //Create a new Movie and setup its info
-                currentMovie = new Movie();
+                    //Create a new Movie and setup its info
+                    currentMovie = new Movie();
 
-                currentMovie.title = dataReader.GetString(1);
-                currentMovie.year = dataReader.GetInt32(2);
-                currentMovie.length = dataReader.GetTimeSpan(3);
-                //currentMovie.director = dataReader.GetString(4);
-                currentMovie.rating = dataReader.GetDouble(4);
-                currentMovie.imagePath = dataReader.GetString(5);
+                    currentMovie.title = dataReader.GetString(1);
+                    currentMovie.year = dataReader.GetInt32(2);
+                    currentMovie.length = dataReader.GetTimeSpan(3);
+                    //currentMovie.director = dataReader.GetString(4);
+                    currentMovie.rating = dataReader.GetDouble(4);
+                    currentMovie.imagePath = dataReader.GetString(5);
+                    Console.WriteLine("image = " + currentMovie.imagePath);
 
-                movieImageList.Images.Add(Image.FromFile(currentMovie.imagePath));
+                    movieImageList.Images.Add(Image.FromFile(currentMovie.imagePath.ToString()));
 
 
-                Console.WriteLine("Title = " + currentMovie.title);
+                    Console.WriteLine("Title = " + currentMovie.title);
 
-                Movies.Add(currentMovie);
+                    Movies.Add(currentMovie);
 
+                }
             }
+            catch
+            {
+                
+            }
+            
 
             //After executing the query(ies) in the db, the connection must be closed
             dbConnection.Close();
