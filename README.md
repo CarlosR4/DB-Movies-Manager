@@ -3,8 +3,8 @@ Movie database manager
 
 ======================
 
-Frederik Blais
-Carlos Ramirez
+Frederik Blais | 
+Carlos Ramirez | 
 Curren Holden
 
 
