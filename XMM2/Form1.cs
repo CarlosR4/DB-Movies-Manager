@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
-
+using System.Text.RegularExpressions;
 namespace XMM2
 {
     public partial class Form1 : Form
@@ -27,11 +27,9 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "username", "password", "testdb");
+            SetDBConnection("localhost", "postgres", "yvnft9k", "moviedatabase");
             // =============================================================
 
-
-            //checkPostgresVersion();
 
             getMoviesFromDB();
 
@@ -52,29 +50,6 @@ namespace XMM2
             string conectionString = "Host=" + serverAddress + "; Username=" + username + "; Password=" + passwd + "; Database=" + dbName + ";";
 
             dbConnection = new NpgsqlConnection(conectionString);
-        }
-
-        private void checkPostgresVersion()
-        {
-            //Before sending commands to the database, the connection must be opened
-            dbConnection.Open();
-
-            //This is a string representing the SQL query to execute in the db
-            string sqlQuery = "SELECT version()";
-
-
-            //This is the actual SQL containing the query to be executed
-            NpgsqlCommand dbCommand = new NpgsqlCommand(sqlQuery, dbConnection);
-
-            //This variable stores the result of the SQL query sent to the db
-            string postgresVersion = dbCommand.ExecuteScalar().ToString();
-
-            //After executing the query(ies) in the db, the connection must be closed
-            dbConnection.Close();
-
-            Console.WriteLine("\n----------------------");
-
-            Console.WriteLine("PostgreSQL version: " + postgresVersion);
         }
         private void getMoviesFromDB()
         {
@@ -108,6 +83,8 @@ namespace XMM2
                 //currentMovie.director = dataReader.GetString(4);
                 currentMovie.rating = dataReader.GetDouble(4);
                 currentMovie.imagePath = dataReader.GetString(5);
+
+                movieImageList.Images.Add(Image.FromFile(currentMovie.imagePath));
 
 
                 Console.WriteLine("Title = " + currentMovie.title);
@@ -261,6 +238,40 @@ namespace XMM2
         {
             //  Closes the form
             this.Close();
+        }
+
+        private void MoviesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int index = moviesListView.FocusedItem.Index;
+
+                if (moviesListView.SelectedIndices.Count <= 0)
+                {
+                    return;
+                }
+
+                int intselectedindex = moviesListView.SelectedIndices[0];
+
+
+                if (intselectedindex >= 0)
+                {
+                    String text = moviesListView.Items[intselectedindex].Text;
+
+                    string replacement = Regex.Replace(text, @"\t|\n|\r", "");
+
+                    int test = Movies.FindIndex(a => a.title == replacement);
+
+                    moviePictureBox.Image = movieImageList.Images[test];
+
+
+                    MessageBox.Show("WORKS");
+                    //imagePathTextBox.Text = Movies[test].Image;
+                }
+            }
+
+            catch { }
         }
     }
 }
