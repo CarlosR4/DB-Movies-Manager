@@ -145,7 +145,7 @@ namespace XMM2
             moviesListView.Columns.Add(columnHeader3);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
             //  Closes the form
             this.Close();
