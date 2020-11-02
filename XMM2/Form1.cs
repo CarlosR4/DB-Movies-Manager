@@ -23,7 +23,13 @@ namespace XMM2
         {
             InitializeComponent();
 
-            SetDBConnection("localhost", "postgres", "yvnft9k", "moviedatabase");
+
+            // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
+            //             == FORMAT ==
+            // ( host_name, username, password, db_name )
+            SetDBConnection("localhost", "username", "password", "testdb");
+            // =============================================================
+
 
             //checkPostgresVersion();
 
