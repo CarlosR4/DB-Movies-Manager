@@ -16,16 +16,22 @@ namespace XMM2
         NpgsqlConnection dbConnection;
 
         List<Movie> Movies = new List<Movie>();
+        List<Genre> Genres = new List<Genre>();
+        List<Member> Members = new List<Member>();
 
         public Form1()
         {
             InitializeComponent();
 
-            SetDBConnection("localhost", "postgres", "muli167siva290", "moviedb");
+            SetDBConnection("localhost", "postgres", "yvnft9k", "moviedatabase");
 
             //checkPostgresVersion();
 
             getMoviesFromDB();
+
+            getGenresFromDB();
+
+            getMembersFromDB();
         }
         /// <summary>
         /// This method setsup a db connection to a postgreSQL db. The connection is stored in the global variable 'dbConnection'
@@ -143,6 +149,106 @@ namespace XMM2
             columnHeader3.TextAlign = HorizontalAlignment.Left;
             columnHeader3.Width = 80;
             moviesListView.Columns.Add(columnHeader3);
+        }
+        private void getGenresFromDB()
+        {
+            Genre currentGenre;
+
+            //Connect to the database before sending commands
+            dbConnection.Open();
+
+            //This is a string representing the SQL query to execute in the db            
+            string sqlQuery = "SELECT * FROM movieschema.genre;";
+            Console.WriteLine("SQL Query: " + sqlQuery);
+
+            //This is the actual SQL containing the query to be executed
+            NpgsqlCommand dbCommand = new NpgsqlCommand(sqlQuery, dbConnection);
+
+            //This variable stores the result of the SQL query sent to the db
+            NpgsqlDataReader dataReader = dbCommand.ExecuteReader();
+
+            Console.WriteLine("\n=================");
+
+            //Read each line present in the dataReader
+            while (dataReader.Read())
+            {
+
+                //Create a new Movie and setup its info
+                currentGenre = new Genre();
+
+                currentGenre.code = dataReader.GetString(0);
+                currentGenre.name = dataReader.GetString(1);
+
+                Console.WriteLine("Code = " + currentGenre.code+"\n"+ "Name = "+ currentGenre.name);
+
+                Genres.Add(currentGenre);
+
+            }
+
+            //After executing the query(ies) in the db, the connection must be closed
+            dbConnection.Close();
+
+            DisplayGenres();
+
+        }
+
+        private void DisplayGenres()
+        {
+            for (int i = 0; i < Genres.Count; i++)
+            {
+                genreListBox.Items.Add(Genres[i].name);
+            }
+        }
+
+        private void getMembersFromDB()
+        {
+            Member currentMember;
+
+            //Connect to the database before sending commands
+            dbConnection.Open();
+
+            //This is a string representing the SQL query to execute in the db            
+            string sqlQuery = "SELECT * FROM movieschema.member;";
+            Console.WriteLine("SQL Query: " + sqlQuery);
+
+            //This is the actual SQL containing the query to be executed
+            NpgsqlCommand dbCommand = new NpgsqlCommand(sqlQuery, dbConnection);
+
+            //This variable stores the result of the SQL query sent to the db
+            NpgsqlDataReader dataReader = dbCommand.ExecuteReader();
+
+            Console.WriteLine("\n=================");
+
+            //Read each line present in the dataReader
+            while (dataReader.Read())
+            {
+
+                //Create a new Movie and setup its info
+                currentMember = new Member();
+
+                currentMember.id = dataReader.GetInt32(0);
+                currentMember.name = dataReader.GetString(1);
+                currentMember.dob = dataReader.GetDateTime(2);
+                currentMember.memberType = dataReader.GetInt32(3);
+
+                Console.WriteLine("Code = " + currentMember.id + "\n" + "Name = " + currentMember.name);
+
+                Members.Add(currentMember);
+
+            }
+
+            //After executing the query(ies) in the db, the connection must be closed
+            dbConnection.Close();
+
+            DisplayMembers();
+        }
+
+        private void DisplayMembers()
+        {
+            for (int i = 0; i < Members.Count; i++)
+            {
+                actorsListBox.Items.Add(Members[i].name);
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)

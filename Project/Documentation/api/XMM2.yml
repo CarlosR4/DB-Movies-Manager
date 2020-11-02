@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: XMM2
+  commentId: N:XMM2
+  id: XMM2
+  children:
+  - XMM2.EditMember
+  - XMM2.EditMovie
+  - XMM2.Form1
+  langs:
+  - csharp
+  - vb
+  name: XMM2
+  nameWithType: XMM2
+  fullName: XMM2
+  type: Namespace
+  assemblies:
+  - XMM2
+references:
+- uid: XMM2.EditMember
+  commentId: T:XMM2.EditMember
+  name: EditMember
+  nameWithType: EditMember
+  fullName: XMM2.EditMember
+- uid: XMM2.EditMovie
+  commentId: T:XMM2.EditMovie
+  name: EditMovie
+  nameWithType: EditMovie
+  fullName: XMM2.EditMovie
+- uid: XMM2.Form1
+  commentId: T:XMM2.Form1
+  name: Form1
+  nameWithType: Form1
+  fullName: XMM2.Form1

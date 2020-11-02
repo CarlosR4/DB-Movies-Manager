@@ -1,0 +1,12 @@
+{
+  "XMM2": "XMM2.yml",
+  "XMM2.EditMember": "XMM2.EditMember.yml",
+  "XMM2.EditMember.#ctor": "XMM2.EditMember.yml",
+  "XMM2.EditMember.Dispose(System.Boolean)": "XMM2.EditMember.yml",
+  "XMM2.EditMovie": "XMM2.EditMovie.yml",
+  "XMM2.EditMovie.#ctor": "XMM2.EditMovie.yml",
+  "XMM2.EditMovie.Dispose(System.Boolean)": "XMM2.EditMovie.yml",
+  "XMM2.Form1": "XMM2.Form1.yml",
+  "XMM2.Form1.#ctor": "XMM2.Form1.yml",
+  "XMM2.Form1.Dispose(System.Boolean)": "XMM2.Form1.yml"
+}
