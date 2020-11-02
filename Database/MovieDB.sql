@@ -1,4 +1,4 @@
-CREATE DATABASE MovieDB;
+CREATE DATABASE Movie_DB;
 
 CREATE SCHEMA MovieSchema;
 
@@ -43,9 +43,9 @@ CREATE TABLE jt_movie_member(
 );
 
 CREATE TABLE member(
-    id integer not null ,
+    id integer not null,
     name varchar(128) not null,
-    date_of_birth date not null ,
+    date_of_birth date,
     member_type_id integer not null,
 
     Constraint member_pk PRIMARY KEY (id),

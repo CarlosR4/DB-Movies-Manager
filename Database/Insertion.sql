@@ -305,7 +305,7 @@ INSERT INTO movie
            '2019',
            '1h 37m',
            '4.2',
-           '??/images/murderMystery.jpg');
+           'images\murderMystery.jpg');
 
 INSERT INTO movie
     values ('102',
@@ -313,7 +313,7 @@ INSERT INTO movie
            '2012',
            '2h 30m',
            '4.4',
-           '??/images/lincoln.jpg');
+           'images\lincoln.jpg');
 
 INSERT INTO movie
     values ('103',
@@ -321,7 +321,7 @@ INSERT INTO movie
            '2019',
            '1h 40m',
            '4',
-           '??/images/toyStory4.jpg');
+           'images\toyStory4.jpg');
 
 INSERT INTO movie
     values ('104',
@@ -329,7 +329,7 @@ INSERT INTO movie
            '2004',
            '1h 45m',
            '4.8',
-           '??/images/shrek2.jpg');
+           'images\shrek2.jpg');
 
 INSERT INTO movie
     values ('105',
@@ -337,7 +337,7 @@ INSERT INTO movie
            '2012',
            '2h 18m',
            '4.6',
-           '??/images/flight.jpg');
+           'images\flight.jpg');
 
 INSERT INTO movie
     values ('106',
@@ -345,7 +345,7 @@ INSERT INTO movie
            '2012',
            '2h 24m',
            '4.6',
-           '??/images/skyfall.jpg');
+           'images\skyfall.jpg');
 
 INSERT INTO movie
     values ('107',
@@ -353,7 +353,7 @@ INSERT INTO movie
            '2006',
            '2h 31m',
            '4.7',
-           '??/images/piratesDMC.jpg');
+           'images\piratesDMC.jpg');
 
 INSERT INTO movie
     values ('108',
@@ -361,7 +361,7 @@ INSERT INTO movie
            '2015',
            '1h 39m',
            '4.1',
-           '??/images/vacation.jpg');
+           'images\vacation.jpg');
 
 INSERT INTO movie
     values ('109',
@@ -369,7 +369,7 @@ INSERT INTO movie
            '2003',
            '1h 45m',
            '3.4',
-           '??/images/rundown.jpg');
+           'images\rundown.jpg');
 
 INSERT INTO movie
     values ('110',
@@ -377,7 +377,7 @@ INSERT INTO movie
            '2018',
            '1h 39m',
            '4.8',
-           '??/images/greenBook.png');
+           'images\greenBook.png');
 
 INSERT INTO movie
     values ('111',
