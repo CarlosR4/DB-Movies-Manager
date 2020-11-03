@@ -39,7 +39,6 @@
             this.deleteMovieButton = new System.Windows.Forms.Button();
             this.deleteMemberButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.movieImageList = new System.Windows.Forms.ImageList(this.components);
+            this.textBox9 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -181,15 +181,6 @@
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Title:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(68, 387);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(122, 21);
-            this.comboBox2.TabIndex = 12;
             // 
             // textBox1
             // 
@@ -525,11 +516,20 @@
             this.movieImageList.ImageSize = new System.Drawing.Size(255, 255);
             this.movieImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(68, 387);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(122, 20);
+            this.textBox9.TabIndex = 57;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 567);
+            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.actorsListBox);
@@ -565,7 +565,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.deleteMemberButton);
             this.Controls.Add(this.deleteMovieButton);
@@ -601,7 +600,6 @@
         private System.Windows.Forms.Button deleteMovieButton;
         private System.Windows.Forms.Button deleteMemberButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
@@ -638,6 +636,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ImageList movieImageList;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
 

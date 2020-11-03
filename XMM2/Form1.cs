@@ -279,10 +279,29 @@ namespace XMM2
                 {
                     //  Display Movie Info in TextBoxes
                     if (moviesListView.Items[i].Selected)
-                    textBox1.Text = moviesListView.Items[i].SubItems[0].Text;
-                    textBox2.Text = moviesListView.Items[i].SubItems[1].Text;
-                    textBox5.Text = moviesListView.Items[i].SubItems[2].Text;
+                    {
+                        textBox1.Text = moviesListView.Items[i].SubItems[0].Text;
+                        textBox2.Text = moviesListView.Items[i].SubItems[1].Text;
+                        textBox5.Text = moviesListView.Items[i].SubItems[2].Text;
+                    }
                 }
+
+                //
+
+                int selected = moviesListView.FocusedItem.Index;
+                Movie getMovie;
+                Genre getGenre;
+
+                for (int i = 0; i < moviesListView.Items.Count; i++)
+                    if (moviesListView.Items[i].Selected)
+                    {
+                        getMovie = (Movie)Movies[selected];
+                        getGenre = (Genre)Genres[selected];
+                        textBox3.Text = getMovie.rating.ToString();
+                        textBox9.Text = getGenre.name;
+                        textBox4.Text = getMovie.imagePath;
+                    }
+                
             }
 
             catch { } 
