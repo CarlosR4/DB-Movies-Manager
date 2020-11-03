@@ -27,7 +27,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "username", "password", "movie_db");
+            SetDBConnection("localhost", "postgres", "yvnft9k", "moviesdb");
             // =============================================================
 
 
@@ -273,10 +273,6 @@ namespace XMM2
                     int test = Movies.FindIndex(a => a.title == replacement);
 
                     moviePictureBox.Image = movieImageList.Images[test];
-
-
-                    MessageBox.Show("WORKS");
-                    //imagePathTextBox.Text = Movies[test].Image;
                 }
             }
 
