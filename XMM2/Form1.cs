@@ -274,14 +274,14 @@ namespace XMM2
 
                     moviePictureBox.Image = movieImageList.Images[test];
                 }
-                
+
                 for (int i = 0; i < moviesListView.Items.Count; i++)
                 {
                     //  Display Movie Info in TextBoxes
                     if (moviesListView.Items[i].Selected)
-                        textBox1.Text = moviesListView.Items[i].SubItems[0].Text;
-                        textBox2.Text = moviesListView.Items[i].SubItems[1].Text;
-                        textBox5.Text = moviesListView.Items[i].SubItems[2].Text;
+                    textBox1.Text = moviesListView.Items[i].SubItems[0].Text;
+                    textBox2.Text = moviesListView.Items[i].SubItems[1].Text;
+                    textBox5.Text = moviesListView.Items[i].SubItems[2].Text;
                 }
             }
 
@@ -290,8 +290,17 @@ namespace XMM2
 
         private void actorsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int selected = actorsListBox.SelectedIndex;
+            Member getMember;
+
             //  Display selected actor name in Label
-            label17.Text = actorsListBox.SelectedItem.ToString();
+            //  Display the DoB for selected actor in Label
+            if (actorsListBox.SelectedIndex != -1)
+            {
+                getMember = (Member)Members[selected];
+                label17.Text = getMember.name;
+                label18.Text = getMember.dob.ToString();
+            }
         }
     }
 }
