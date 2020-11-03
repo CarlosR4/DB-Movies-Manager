@@ -27,7 +27,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "postgres", "yvnft9k", "moviesdb");
+            SetDBConnection("localhost", "postgres", "muli167siva290", "movie_db");
             // =============================================================
 
 
@@ -274,9 +274,17 @@ namespace XMM2
 
                     moviePictureBox.Image = movieImageList.Images[test];
                 }
+                for (int i = 0; i < moviesListView.Items.Count; i++)
+                {
+                    //  Display Movie Info in TextBoxes
+                    if (moviesListView.Items[i].Selected)
+                        textBox1.Text = moviesListView.Items[i].SubItems[0].Text;
+                        textBox2.Text = moviesListView.Items[i].SubItems[1].Text;
+                        textBox5.Text = moviesListView.Items[i].SubItems[2].Text;
+                }
             }
 
-            catch { }
+            catch { } 
         }
     }
 }
