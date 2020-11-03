@@ -274,6 +274,7 @@ namespace XMM2
 
                     moviePictureBox.Image = movieImageList.Images[test];
                 }
+                
                 for (int i = 0; i < moviesListView.Items.Count; i++)
                 {
                     //  Display Movie Info in TextBoxes
@@ -285,6 +286,12 @@ namespace XMM2
             }
 
             catch { } 
+        }
+
+        private void actorsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //  Display selected actor name in Label
+            label17.Text = actorsListBox.SelectedItem.ToString();
         }
     }
 }

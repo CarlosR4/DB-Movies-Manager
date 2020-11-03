@@ -84,7 +84,7 @@
             // 
             this.moviesListView.HideSelection = false;
             this.moviesListView.Location = new System.Drawing.Point(9, 10);
-            this.moviesListView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moviesListView.Margin = new System.Windows.Forms.Padding(2);
             this.moviesListView.Name = "moviesListView";
             this.moviesListView.Size = new System.Drawing.Size(312, 297);
             this.moviesListView.TabIndex = 0;
@@ -95,7 +95,7 @@
             // 
             this.moviePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.moviePictureBox.Location = new System.Drawing.Point(335, 10);
-            this.moviePictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moviePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.moviePictureBox.Name = "moviePictureBox";
             this.moviePictureBox.Size = new System.Drawing.Size(255, 255);
             this.moviePictureBox.TabIndex = 1;
@@ -104,7 +104,7 @@
             // exitButton
             // 
             this.exitButton.Location = new System.Drawing.Point(825, 521);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(114, 40);
             this.exitButton.TabIndex = 2;
@@ -115,7 +115,7 @@
             // addMovieButton
             // 
             this.addMovieButton.Location = new System.Drawing.Point(415, 316);
-            this.addMovieButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addMovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.addMovieButton.Name = "addMovieButton";
             this.addMovieButton.Size = new System.Drawing.Size(134, 36);
             this.addMovieButton.TabIndex = 3;
@@ -125,7 +125,7 @@
             // addMemberButton
             // 
             this.addMemberButton.Location = new System.Drawing.Point(595, 420);
-            this.addMemberButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addMemberButton.Margin = new System.Windows.Forms.Padding(2);
             this.addMemberButton.Name = "addMemberButton";
             this.addMemberButton.Size = new System.Drawing.Size(134, 36);
             this.addMemberButton.TabIndex = 4;
@@ -135,7 +135,7 @@
             // modifyMovieButton
             // 
             this.modifyMovieButton.Location = new System.Drawing.Point(415, 368);
-            this.modifyMovieButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifyMovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.modifyMovieButton.Name = "modifyMovieButton";
             this.modifyMovieButton.Size = new System.Drawing.Size(134, 36);
             this.modifyMovieButton.TabIndex = 5;
@@ -145,7 +145,7 @@
             // modifyMemberButton
             // 
             this.modifyMemberButton.Location = new System.Drawing.Point(595, 473);
-            this.modifyMemberButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifyMemberButton.Margin = new System.Windows.Forms.Padding(2);
             this.modifyMemberButton.Name = "modifyMemberButton";
             this.modifyMemberButton.Size = new System.Drawing.Size(134, 36);
             this.modifyMemberButton.TabIndex = 6;
@@ -155,7 +155,7 @@
             // deleteMovieButton
             // 
             this.deleteMovieButton.Location = new System.Drawing.Point(415, 419);
-            this.deleteMovieButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteMovieButton.Margin = new System.Windows.Forms.Padding(2);
             this.deleteMovieButton.Name = "deleteMovieButton";
             this.deleteMovieButton.Size = new System.Drawing.Size(134, 36);
             this.deleteMovieButton.TabIndex = 7;
@@ -165,7 +165,7 @@
             // deleteMemberButton
             // 
             this.deleteMemberButton.Location = new System.Drawing.Point(595, 525);
-            this.deleteMemberButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteMemberButton.Margin = new System.Windows.Forms.Padding(2);
             this.deleteMemberButton.Name = "deleteMemberButton";
             this.deleteMemberButton.Size = new System.Drawing.Size(134, 36);
             this.deleteMemberButton.TabIndex = 8;
@@ -186,7 +186,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(68, 387);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(122, 21);
             this.comboBox2.TabIndex = 12;
@@ -194,7 +194,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(68, 325);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(122, 20);
             this.textBox1.TabIndex = 13;
@@ -202,7 +202,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(68, 357);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(122, 20);
             this.textBox2.TabIndex = 14;
@@ -270,7 +270,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(272, 387);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(122, 20);
             this.textBox3.TabIndex = 21;
@@ -278,7 +278,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(272, 357);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(122, 20);
             this.textBox4.TabIndex = 23;
@@ -286,7 +286,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(272, 325);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(122, 20);
             this.textBox5.TabIndex = 24;
@@ -324,7 +324,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(595, 323);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(135, 20);
             this.textBox6.TabIndex = 28;
@@ -332,7 +332,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(595, 356);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(135, 20);
             this.textBox7.TabIndex = 29;
@@ -341,7 +341,7 @@
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(595, 386);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(135, 21);
             this.comboBox4.TabIndex = 30;
@@ -380,7 +380,7 @@
             // movieSearchButton
             // 
             this.movieSearchButton.Location = new System.Drawing.Point(852, 388);
-            this.movieSearchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.movieSearchButton.Margin = new System.Windows.Forms.Padding(2);
             this.movieSearchButton.Name = "movieSearchButton";
             this.movieSearchButton.Size = new System.Drawing.Size(79, 32);
             this.movieSearchButton.TabIndex = 36;
@@ -390,7 +390,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(801, 363);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(130, 20);
             this.textBox8.TabIndex = 37;
@@ -399,7 +399,7 @@
             // 
             this.memberPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.memberPictureBox.Location = new System.Drawing.Point(603, 10);
-            this.memberPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.memberPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.memberPictureBox.Name = "memberPictureBox";
             this.memberPictureBox.Size = new System.Drawing.Size(150, 150);
             this.memberPictureBox.TabIndex = 40;
@@ -409,7 +409,7 @@
             // 
             this.memberListBox.FormattingEnabled = true;
             this.memberListBox.Location = new System.Drawing.Point(272, 421);
-            this.memberListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.memberListBox.Margin = new System.Windows.Forms.Padding(2);
             this.memberListBox.Name = "memberListBox";
             this.memberListBox.Size = new System.Drawing.Size(122, 108);
             this.memberListBox.TabIndex = 41;
@@ -466,7 +466,7 @@
             // addGenreButton
             // 
             this.addGenreButton.Location = new System.Drawing.Point(68, 421);
-            this.addGenreButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addGenreButton.Margin = new System.Windows.Forms.Padding(2);
             this.addGenreButton.Name = "addGenreButton";
             this.addGenreButton.Size = new System.Drawing.Size(122, 36);
             this.addGenreButton.TabIndex = 47;
@@ -476,7 +476,7 @@
             // modifyGenre
             // 
             this.modifyGenre.Location = new System.Drawing.Point(68, 474);
-            this.modifyGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifyGenre.Margin = new System.Windows.Forms.Padding(2);
             this.modifyGenre.Name = "modifyGenre";
             this.modifyGenre.Size = new System.Drawing.Size(122, 36);
             this.modifyGenre.TabIndex = 48;
@@ -487,7 +487,7 @@
             // 
             this.genreListBox.FormattingEnabled = true;
             this.genreListBox.Location = new System.Drawing.Point(801, 43);
-            this.genreListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genreListBox.Margin = new System.Windows.Forms.Padding(2);
             this.genreListBox.Name = "genreListBox";
             this.genreListBox.Size = new System.Drawing.Size(139, 121);
             this.genreListBox.TabIndex = 53;
@@ -496,10 +496,11 @@
             // 
             this.actorsListBox.FormattingEnabled = true;
             this.actorsListBox.Location = new System.Drawing.Point(801, 186);
-            this.actorsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.actorsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.actorsListBox.Name = "actorsListBox";
             this.actorsListBox.Size = new System.Drawing.Size(139, 121);
             this.actorsListBox.TabIndex = 54;
+            this.actorsListBox.SelectedIndexChanged += new System.EventHandler(this.actorsListBox_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -576,7 +577,7 @@
             this.Controls.Add(this.moviePictureBox);
             this.Controls.Add(this.moviesListView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "DB Movie Manager";
