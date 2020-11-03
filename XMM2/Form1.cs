@@ -280,23 +280,28 @@ namespace XMM2
                     //  Display Movie Info in TextBoxes
                     if (moviesListView.Items[i].Selected)
                     {
+                        //  TextBoxes to display information requested
                         textBox1.Text = moviesListView.Items[i].SubItems[0].Text;
                         textBox2.Text = moviesListView.Items[i].SubItems[1].Text;
                         textBox5.Text = moviesListView.Items[i].SubItems[2].Text;
                     }
                 }
 
-                //
-
+                // Declare selected item in ListView to be the focused element
                 int selected = moviesListView.FocusedItem.Index;
+
+                //  Declare variables for lists below
                 Movie getMovie;
                 Genre getGenre;
 
                 for (int i = 0; i < moviesListView.Items.Count; i++)
                     if (moviesListView.Items[i].Selected)
                     {
+                        //  Selected items for the lists
                         getMovie = (Movie)Movies[selected];
                         getGenre = (Genre)Genres[selected];
+
+                        //  TextBoxes to display information requested
                         textBox3.Text = getMovie.rating.ToString();
                         textBox9.Text = getGenre.name;
                         textBox4.Text = getMovie.imagePath;
@@ -309,14 +314,18 @@ namespace XMM2
 
         private void actorsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Declare selected item in ListBox to be the focused element
             int selected = actorsListBox.SelectedIndex;
+
+            //  Declare variable for list below
             Member getMember;
 
-            //  Display selected actor name in Label
-            //  Display the DoB for selected actor in Label
             if (actorsListBox.SelectedIndex != -1)
             {
+                //  Selected items for the lists
                 getMember = (Member)Members[selected];
+
+                //  TextBoxes to display information requested
                 label17.Text = getMember.name;
                 label18.Text = getMember.dob.ToString();
             }
