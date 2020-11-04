@@ -27,7 +27,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "postgres", "muli167siva290", "movie_db");
+            SetDBConnection("localhost", "username", "password", "movie_db");
             // =============================================================
 
 
@@ -96,11 +96,7 @@ namespace XMM2
 
                 }
             }
-            catch
-            {
-                
-            }
-            
+            catch{}            
 
             //After executing the query(ies) in the db, the connection must be closed
             dbConnection.Close();
@@ -141,6 +137,13 @@ namespace XMM2
             columnHeader3.TextAlign = HorizontalAlignment.Left;
             columnHeader3.Width = 80;
             moviesListView.Columns.Add(columnHeader3);
+
+            titleTextBox.Enabled = false;
+            yearTextBox.Enabled = false;
+            lengthTextBox.Enabled = false;
+            genreTextBox.Enabled = false;
+            pictureTextBox.Enabled = false;
+            ratingTextBox.Enabled = false;
         }
         private void getGenresFromDB()
         {
@@ -281,9 +284,9 @@ namespace XMM2
                     if (moviesListView.Items[i].Selected)
                     {
                         //  TextBoxes to display information requested
-                        textBox1.Text = moviesListView.Items[i].SubItems[0].Text;
-                        textBox2.Text = moviesListView.Items[i].SubItems[1].Text;
-                        textBox5.Text = moviesListView.Items[i].SubItems[2].Text;
+                        titleTextBox.Text = moviesListView.Items[i].SubItems[0].Text;
+                        yearTextBox.Text = moviesListView.Items[i].SubItems[1].Text;
+                        lengthTextBox.Text = moviesListView.Items[i].SubItems[2].Text;
                     }
                 }
 
@@ -302,9 +305,9 @@ namespace XMM2
                         getGenre = (Genre)Genres[selected];
 
                         //  TextBoxes to display information requested
-                        textBox3.Text = getMovie.rating.ToString();
-                        textBox9.Text = getGenre.name;
-                        textBox4.Text = getMovie.imagePath;
+                        ratingTextBox.Text = getMovie.rating.ToString();
+                        genreTextBox.Text = getGenre.name;
+                        pictureTextBox.Text = getMovie.imagePath;
                     }
                 
             }
