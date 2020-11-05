@@ -335,7 +335,24 @@ namespace XMM2
                     //  TextBoxes to display information requested
                     label17.Text = getMember.name;
                     label18.Text = getMember.dob.ToString();
-                    label10.Text = getMember.memberType.ToString();
+
+                    //  Check assigned integer for each member type and display correct string
+                    if (getMember.memberType == 1)
+                    {
+                        label10.Text = "Actor/Actresse";
+                    }
+                    else if (getMember.memberType == 2)
+                    {
+                        label10.Text = "Director";
+                    }
+                    else if (getMember.memberType == 3)
+                    {
+                        label10.Text = "Producer";
+                    }
+                    else if (getMember.memberType == 4)
+                    {
+                        label10.Text = "Director of photography";
+                    }
                 }
 
                 //-------------------------------
