@@ -398,5 +398,25 @@ namespace XMM2
 
 
         }
+
+        private void movieSearchButton_Click(object sender, EventArgs e)
+        {
+            /*
+            if (comboBox1.Text == "Member")
+            {
+                foreach (Member getMember in actorsListBox.Items)
+                {
+                    if (getMember.name.StartsWith(textBox8.Text))
+                    {
+                        actorsListBox.Items.Add(getMember.name);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Movie")
+            {
+
+            }
+            */
+        }
     }
 }
