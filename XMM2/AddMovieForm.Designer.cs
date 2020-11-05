@@ -154,6 +154,7 @@
             this.addMovieButton.TabIndex = 70;
             this.addMovieButton.Text = "Add movie";
             this.addMovieButton.UseVisualStyleBackColor = true;
+            this.addMovieButton.Click += new System.EventHandler(this.AddMovieButton_Click);
             // 
             // AddMovieForm
             // 

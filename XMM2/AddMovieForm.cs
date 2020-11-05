@@ -16,5 +16,15 @@ namespace XMM2
         {
             InitializeComponent();
         }
+
+        private void AddMovieButton_Click(object sender, EventArgs e)
+        {
+            string title = titleTextBox.Text;
+            int year = int.Parse(yearTextBox.Text);
+            string genre = genreTextBox.Text;
+            string length = lengthTextBox.Text;
+            string picture = pictureTextBox.Text;
+            int rating = int.Parse(ratingTextBox.Text);
+        }
     }
 }
