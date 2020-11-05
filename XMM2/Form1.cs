@@ -27,7 +27,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "username", "password", "movie_db");
+            SetDBConnection("localhost", "postgres", "yvnft9k", "moviesdb");
             // =============================================================
 
 
@@ -371,6 +371,15 @@ namespace XMM2
             }
             catch { }
             
+        }
+
+        private void AddMovieButton_Click(object sender, EventArgs e)
+        {
+            AddMovieForm addMovie = new AddMovieForm();
+
+            addMovie.ShowDialog();
+
+
         }
     }
 }
