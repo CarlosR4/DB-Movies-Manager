@@ -35,268 +35,6 @@ INSERT INTO genre
            'Adventure',
            '');
 
-/* JT_GENRE_MOVIE_DATA ( Pushed ) */
-
-INSERT INTO jt_genre_movie
-    Values('ACT',
-           '101');
-
-INSERT INTO jt_genre_movie
-    Values('COM',
-           '101');
-
-INSERT INTO jt_genre_movie
-    Values('DRA',
-           '102');
-
-INSERT INTO jt_genre_movie
-    Values('HIS',
-           '102');
-
-INSERT INTO jt_genre_movie
-    Values('COM',
-           '103');
-
-INSERT INTO jt_genre_movie
-    Values('FAM',
-           '103');
-
-INSERT INTO jt_genre_movie
-    Values('ANI',
-           '103');
-
-INSERT INTO jt_genre_movie
-    Values('COM',
-           '104');
-
-INSERT INTO jt_genre_movie
-    Values('FAM',
-           '104');
-
-INSERT INTO jt_genre_movie
-    Values('ANI',
-           '104');
-
-INSERT INTO jt_genre_movie
-    Values('COM',
-           '111');
-
-INSERT INTO jt_genre_movie
-    Values('FAM',
-           '111');
-
-INSERT INTO jt_genre_movie
-    Values('ANI',
-           '111');
-
-INSERT INTO jt_genre_movie
-    Values('ACT',
-           '105');
-
-INSERT INTO jt_genre_movie
-    Values('ACT',
-           '106');
-
-INSERT INTO jt_genre_movie
-    Values('ACT',
-           '107');
-
-INSERT INTO jt_genre_movie
-    Values('ADV',
-           '107');
-
-INSERT INTO jt_genre_movie
-    Values('COM',
-           '108');
-
-INSERT INTO jt_genre_movie
-    Values('COM',
-           '109');
-
-INSERT INTO jt_genre_movie
-    Values('COM',
-           '110');
-
-INSERT INTO jt_genre_movie
-    Values('FAM',
-           '110');
-
-/* JT_MOVIE_MEMBER DATA ( Pushed ) */
-
-INSERT INTO jt_movie_member
-    Values('101',
-           '10123');
-
-INSERT INTO jt_movie_member
-    Values('101',
-           '10124');
-
-INSERT INTO jt_movie_member
-    Values('101',
-           '10125');
-
-INSERT INTO jt_movie_member
-    Values('101',
-           '10126');
-
-INSERT INTO jt_movie_member
-    Values('102',
-           '10127');
-
-INSERT INTO jt_movie_member
-    Values('102',
-           '10128');
-
-INSERT INTO jt_movie_member
-    Values('102',
-           '10129');
-
-INSERT INTO jt_movie_member
-    Values('102',
-           '10130');
-
-INSERT INTO jt_movie_member
-    Values('103',
-           '10131');
-
-INSERT INTO jt_movie_member
-    Values('103',
-           '10132');
-
-INSERT INTO jt_movie_member
-    Values('103',
-           '10133');
-
-INSERT INTO jt_movie_member
-    Values('104',
-           '10135');
-
-INSERT INTO jt_movie_member
-    Values('104',
-           '10136');
-
-INSERT INTO jt_movie_member
-    Values('104',
-           '10137');
-
-INSERT INTO jt_movie_member
-    Values('104',
-           '10134');
-
-INSERT INTO jt_movie_member
-    Values('111',
-           '10138');
-
-INSERT INTO jt_movie_member
-    Values('111',
-           '10135');
-
-INSERT INTO jt_movie_member
-    Values('111',
-           '10136');
-
-INSERT INTO jt_movie_member
-    Values('111',
-           '10137');
-
-/* MEMBER DATA ( Pushed ) */
-
-INSERT INTO member
-    VALUES ('10123',
-           'Adam Sandler',
-           '1966-09-09',
-           '1');
-
-INSERT INTO member
-    VALUES ('10124',
-           'Jennifer Aniston',
-           '1969-02-11',
-           '1');
-
-INSERT INTO member
-    VALUES ('10125',
-           'Kyle Newacheck',
-           '1984-01-23',
-           '2');
-
-INSERT INTO member
-    VALUES ('10126',
-           'John Bernard',
-           '1965-02-18',
-           '3');
-
-INSERT INTO member
-    VALUES ('10127',
-           'David Strathairn',
-           '1949-02-26',
-           '1');
-
-INSERT INTO member
-    VALUES ('10128',
-           'Sally Field',
-           '1946-11-06',
-           '1');
-
-INSERT INTO member
-    VALUES ('10129',
-           'Steven Spielberg',
-           '1946-12-18',
-           '2');
-
-INSERT INTO member
-    VALUES ('10130',
-           'Kathleen Kennedy',
-           '1953-06-05',
-           '3');
-
-INSERT INTO member
-    VALUES ('10131',
-           'Josh Cooley',
-           '1960-01-01',
-           '2');
-
-INSERT INTO member
-    VALUES ('10132',
-           'Tom Hanks',
-           '1956-07-09',
-           '1');
-
-INSERT INTO member
-    VALUES ('10133',
-           'Jonas Rivera',
-           '1971-05-02',
-           '3');
-
-INSERT INTO member
-    VALUES ('10134',
-           'Kelly Asbury',
-           '1960-01-15',
-           '2');
-
-INSERT INTO member
-    VALUES ('10135',
-           'Mike Myers',
-           '1963-05-25',
-           '1');
-
-INSERT INTO member
-    VALUES ('10136',
-           'Eddie Murphy',
-           '1961-04-03',
-           '1');
-
-INSERT INTO member
-    VALUES ('10137',
-           'Cameron Diaz',
-           '1972-08-30',
-           '1');
-
-INSERT INTO member
-    VALUES ('10138',
-           'Chris Miller',
-           '1968-02-20',
-           '2');
-
 /* MEMBER TYPE DATA ( Pushed ) */
 
 INSERT INTO movie
@@ -387,6 +125,92 @@ INSERT INTO movie
            '3.2',
            '');
 
+/* JT_GENRE_MOVIE_DATA ( Pushed ) */
+
+INSERT INTO jt_genre_movie
+    Values('ACT',
+           '101');
+
+INSERT INTO jt_genre_movie
+    Values('COM',
+           '101');
+
+INSERT INTO jt_genre_movie
+    Values('DRA',
+           '102');
+
+INSERT INTO jt_genre_movie
+    Values('HIS',
+           '102');
+
+INSERT INTO jt_genre_movie
+    Values('COM',
+           '103');
+
+INSERT INTO jt_genre_movie
+    Values('FAM',
+           '103');
+
+INSERT INTO jt_genre_movie
+    Values('ANI',
+           '103');
+
+INSERT INTO jt_genre_movie
+    Values('COM',
+           '104');
+
+INSERT INTO jt_genre_movie
+    Values('FAM',
+           '104');
+
+INSERT INTO jt_genre_movie
+    Values('ANI',
+           '104');
+
+INSERT INTO jt_genre_movie
+    Values('COM',
+           '111');
+
+INSERT INTO jt_genre_movie
+    Values('FAM',
+           '111');
+
+INSERT INTO jt_genre_movie
+    Values('ANI',
+           '111');
+
+INSERT INTO jt_genre_movie
+    Values('ACT',
+           '105');
+
+INSERT INTO jt_genre_movie
+    Values('ACT',
+           '106');
+
+INSERT INTO jt_genre_movie
+    Values('ACT',
+           '107');
+
+INSERT INTO jt_genre_movie
+    Values('ADV',
+           '107');
+
+INSERT INTO jt_genre_movie
+    Values('COM',
+           '108');
+
+INSERT INTO jt_genre_movie
+    Values('COM',
+           '109');
+
+INSERT INTO jt_genre_movie
+    Values('COM',
+           '110');
+
+INSERT INTO jt_genre_movie
+    Values('FAM',
+           '110');
+
 /* MEMBER_TYPE DATA ( Pushed ) */
 
 INSERT INTO member_type
@@ -408,3 +232,195 @@ INSERT INTO member_type
     VALUES ('4',
            'Director of photography',
            'He is in charge of the look of the "frame" of the movie shots, hence the name "photography". ');
+
+/* MEMBER DATA ( Pushed ) */
+
+INSERT INTO member
+    VALUES ('10123',
+           'Adam Sandler',
+           '1966-09-09',
+           '1',
+            'images\members\adamsandler.jpg');
+
+INSERT INTO member
+    VALUES ('10124',
+           'Jennifer Aniston',
+           '1969-02-11',
+           '1',
+            'images\members\jenniferaniston.jpg');
+
+INSERT INTO member
+    VALUES ('10125',
+           'Kyle Newacheck',
+           '1984-01-23',
+           '2',
+            'images\members\kylenewacheck.jpg');
+
+INSERT INTO member
+    VALUES ('10126',
+           'John Bernard',
+           '1965-02-18',
+           '3',
+            'images\members\johnbernard.jpg');
+
+INSERT INTO member
+    VALUES ('10127',
+           'David Strathairn',
+           '1949-02-26',
+           '1',
+            'images\members\davidstrathairn.jpg');
+
+INSERT INTO member
+    VALUES ('10128',
+           'Sally Field',
+           '1946-11-06',
+           '1',
+            'images\members\sallyfield.jpg');
+
+INSERT INTO member
+    VALUES ('10129',
+           'Steven Spielberg',
+           '1946-12-18',
+           '2',
+            'images\members\stevenspielberg.jpg');
+
+INSERT INTO member
+    VALUES ('10130',
+           'Kathleen Kennedy',
+           '1953-06-05',
+           '3',
+            'images\members\kathleenkennedy.jpg');
+
+INSERT INTO member
+    VALUES ('10131',
+           'Josh Cooley',
+           '1960-01-01',
+           '2',
+            'images\members\joshcooley.jpg');
+
+INSERT INTO member
+    VALUES ('10132',
+           'Tom Hanks',
+           '1956-07-09',
+           '1',
+            'images\members\tomhanks.jpg');
+
+INSERT INTO member
+    VALUES ('10133',
+           'Jonas Rivera',
+           '1971-05-02',
+           '3',
+            'images\members\jonasrivera.jpg');
+
+INSERT INTO member
+    VALUES ('10134',
+           'Kelly Asbury',
+           '1960-01-15',
+           '2',
+            'images\members\kellyasbury.jpg');
+
+INSERT INTO member
+    VALUES ('10135',
+           'Mike Myers',
+           '1963-05-25',
+           '1',
+            'images\members\mikemyers.jpg');
+
+INSERT INTO member
+    VALUES ('10136',
+           'Eddie Murphy',
+           '1961-04-03',
+           '1',
+            'images\members\eddiemurphy.jpg');
+
+INSERT INTO member
+    VALUES ('10137',
+           'Cameron Diaz',
+           '1972-08-30',
+           '1',
+            'images\members\camerondiaz.jpg');
+
+INSERT INTO member
+    VALUES ('10138',
+           'Chris Miller',
+           '1968-02-20',
+           '2',
+            'images\members\chrismiller.jpg');
+
+/* JT_MOVIE_MEMBER DATA ( Pushed ) */
+
+INSERT INTO jt_movie_member
+    Values('101',
+           '10123');
+
+INSERT INTO jt_movie_member
+    Values('101',
+           '10124');
+
+INSERT INTO jt_movie_member
+    Values('101',
+           '10125');
+
+INSERT INTO jt_movie_member
+    Values('101',
+           '10126');
+
+INSERT INTO jt_movie_member
+    Values('102',
+           '10127');
+
+INSERT INTO jt_movie_member
+    Values('102',
+           '10128');
+
+INSERT INTO jt_movie_member
+    Values('102',
+           '10129');
+
+INSERT INTO jt_movie_member
+    Values('102',
+           '10130');
+
+INSERT INTO jt_movie_member
+    Values('103',
+           '10131');
+
+INSERT INTO jt_movie_member
+    Values('103',
+           '10132');
+
+INSERT INTO jt_movie_member
+    Values('103',
+           '10133');
+
+INSERT INTO jt_movie_member
+    Values('104',
+           '10135');
+
+INSERT INTO jt_movie_member
+    Values('104',
+           '10136');
+
+INSERT INTO jt_movie_member
+    Values('104',
+           '10137');
+
+INSERT INTO jt_movie_member
+    Values('104',
+           '10134');
+
+INSERT INTO jt_movie_member
+    Values('111',
+           '10138');
+
+INSERT INTO jt_movie_member
+    Values('111',
+           '10135');
+
+INSERT INTO jt_movie_member
+    Values('111',
+           '10136');
+
+INSERT INTO jt_movie_member
+    Values('111',
+           '10137');

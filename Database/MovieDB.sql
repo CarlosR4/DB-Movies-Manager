@@ -16,7 +16,7 @@ CREATE TABLE movie(
     year integer not null,
     length interval not null,
     audience_rating real not null,
-    image_file_path varchar(128) not null,
+    image_file_path varchar(128),
 
     Constraint movie_pk PRIMARY KEY (id)
 );
@@ -27,6 +27,19 @@ CREATE TABLE member_type(
     description varchar(128) not null,
 
     Constraint member_type_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE member(
+    id integer not null,
+    name varchar(128) not null,
+    date_of_birth date,
+    member_type_id integer not null,
+    image_file_path varchar(128),
+
+    Constraint member_pk PRIMARY KEY (id),
+
+    CONSTRAINT member_fk FOREIGN KEY (member_type_id)
+    REFERENCES member_type (id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE jt_movie_member(
@@ -40,18 +53,6 @@ CREATE TABLE jt_movie_member(
 
     CONSTRAINT movie_fk FOREIGN KEY (movie_id)
     REFERENCES movie (id) ON DELETE RESTRICT ON UPDATE CASCADE
-);
-
-CREATE TABLE member(
-    id integer not null,
-    name varchar(128) not null,
-    date_of_birth date,
-    member_type_id integer not null,
-
-    Constraint member_pk PRIMARY KEY (id),
-
-    CONSTRAINT member_fk FOREIGN KEY (member_type_id)
-    REFERENCES member_type (id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE jt_genre_movie(
