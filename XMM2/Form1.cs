@@ -27,7 +27,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "postgres", "yvnft9k", "moviesdb");
+            SetDBConnection("localhost", "postgres", "muli167siva290", "movies_db");
             // =============================================================
 
 
@@ -234,7 +234,6 @@ namespace XMM2
                 Members.Add(currentMember);
 
             }
-
             //After executing the query(ies) in the db, the connection must be closed
             dbConnection.Close();
 
@@ -336,6 +335,7 @@ namespace XMM2
                     //  TextBoxes to display information requested
                     label17.Text = getMember.name;
                     label18.Text = getMember.dob.ToString();
+                    label10.Text = getMember.memberType.ToString();
                 }
 
                 //-------------------------------
