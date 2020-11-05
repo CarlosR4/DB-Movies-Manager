@@ -13,6 +13,7 @@ namespace XMM2
         public string name {get;set;}
         public DateTime dob { get; set; }
         public int memberType { get; set; }
+        public string imagepath { get; set; }
 
         public Member()
         {
@@ -20,6 +21,7 @@ namespace XMM2
             name = "";
             dob = new DateTime();
             memberType = 0;
+            imagepath = "";
         }
     }
 }
