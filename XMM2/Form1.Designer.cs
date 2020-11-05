@@ -70,6 +70,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.movieImageList = new System.Windows.Forms.ImageList(this.components);
             this.genreTextBox = new System.Windows.Forms.TextBox();
+            this.membersImageList = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -463,6 +464,12 @@
             this.genreTextBox.Size = new System.Drawing.Size(122, 20);
             this.genreTextBox.TabIndex = 57;
             // 
+            // membersImageList
+            // 
+            this.membersImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.membersImageList.ImageSize = new System.Drawing.Size(150, 150);
+            this.membersImageList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,6 +571,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ImageList movieImageList;
         private System.Windows.Forms.TextBox genreTextBox;
+        private System.Windows.Forms.ImageList membersImageList;
     }
 }
 

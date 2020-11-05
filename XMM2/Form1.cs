@@ -225,6 +225,9 @@ namespace XMM2
                 currentMember.name = dataReader.GetString(1);
                 currentMember.dob = dataReader.GetDateTime(2);
                 currentMember.memberType = dataReader.GetInt32(3);
+                currentMember.imagepath = dataReader.GetString(4);
+
+                membersImageList.Images.Add(Image.FromFile(currentMember.imagepath.ToString()));
 
                 Console.WriteLine("Code = " + currentMember.id + "\n" + "Name = " + currentMember.name);
 
@@ -317,21 +320,57 @@ namespace XMM2
 
         private void actorsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Declare selected item in ListBox to be the focused element
-            int selected = actorsListBox.SelectedIndex;
-
-            //  Declare variable for list below
-            Member getMember;
-
-            if (actorsListBox.SelectedIndex != -1)
+            try
             {
-                //  Selected items for the lists
-                getMember = (Member)Members[selected];
+                // Declare selected item in ListBox to be the focused element
+                int selected = actorsListBox.SelectedIndex;
 
-                //  TextBoxes to display information requested
-                label17.Text = getMember.name;
-                label18.Text = getMember.dob.ToString();
+                //  Declare variable for list below
+                Member getMember;
+
+                if (actorsListBox.SelectedIndex != -1)
+                {
+                    //  Selected items for the lists
+                    getMember = (Member)Members[selected];
+
+                    //  TextBoxes to display information requested
+                    label17.Text = getMember.name;
+                    label18.Text = getMember.dob.ToString();
+                }
+
+                //-------------------------------
+
+                if (actorsListBox.SelectedIndices.Count <= 0)
+                {
+                    return;
+                }
+
+                int selectedindex = actorsListBox.SelectedIndices[0];
+
+
+                if (selectedindex >= 0)
+                {
+                    String text = actorsListBox.Items[selectedindex].ToString();
+
+                    string replacement = Regex.Replace(text, @"\t|\n|\r", "");
+
+                    int index = Members.FindIndex(a => a.name == replacement);
+
+                    try
+                    {
+                        memberPictureBox.Image = membersImageList.Images[index];
+                    }
+                    catch
+                    {
+                        MessageBox.Show("puss");
+                    }
+                    
+
+
+                }
             }
+            catch { }
+            
         }
     }
 }
