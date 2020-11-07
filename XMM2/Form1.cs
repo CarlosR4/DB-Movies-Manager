@@ -27,7 +27,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "postgres", "muli167siva290", "movies_db");
+            SetDBConnection("localhost", "postgres", "yvnft9k", "moviesdb");
             // =============================================================
 
 
@@ -79,6 +79,7 @@ namespace XMM2
                     //Create a new Movie and setup its info
                     currentMovie = new Movie();
 
+                    currentMovie.id = dataReader.GetInt32(0);
                     currentMovie.title = dataReader.GetString(1);
                     currentMovie.year = dataReader.GetInt32(2);
                     currentMovie.length = dataReader.GetTimeSpan(3);
@@ -114,7 +115,7 @@ namespace XMM2
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void listviewFormat()
         {
             //listView1.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             ColumnHeader columnHeader1 = new ColumnHeader();
@@ -144,6 +145,10 @@ namespace XMM2
             genreTextBox.Enabled = false;
             pictureTextBox.Enabled = false;
             ratingTextBox.Enabled = false;
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            listviewFormat();
         }
         private void getGenresFromDB()
         {
@@ -396,6 +401,13 @@ namespace XMM2
 
             addMovie.ShowDialog();
 
+            Movies.Clear();
+
+            movieImageList.Images.Clear();
+
+            moviesListView.Items.Clear();
+
+            getMoviesFromDB();
 
         }
 

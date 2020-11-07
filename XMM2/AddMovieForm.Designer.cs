@@ -45,7 +45,7 @@
             // 
             // genreTextBox
             // 
-            this.genreTextBox.Location = new System.Drawing.Point(72, 112);
+            this.genreTextBox.Location = new System.Drawing.Point(72, 84);
             this.genreTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.genreTextBox.Name = "genreTextBox";
             this.genreTextBox.Size = new System.Drawing.Size(161, 22);
@@ -53,7 +53,7 @@
             // 
             // lengthTextBox
             // 
-            this.lengthTextBox.Location = new System.Drawing.Point(72, 150);
+            this.lengthTextBox.Location = new System.Drawing.Point(72, 122);
             this.lengthTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lengthTextBox.Name = "lengthTextBox";
             this.lengthTextBox.Size = new System.Drawing.Size(161, 22);
@@ -61,7 +61,7 @@
             // 
             // pictureTextBox
             // 
-            this.pictureTextBox.Location = new System.Drawing.Point(72, 189);
+            this.pictureTextBox.Location = new System.Drawing.Point(72, 161);
             this.pictureTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureTextBox.Name = "pictureTextBox";
             this.pictureTextBox.Size = new System.Drawing.Size(161, 22);
@@ -69,7 +69,7 @@
             // 
             // ratingTextBox
             // 
-            this.ratingTextBox.Location = new System.Drawing.Point(72, 226);
+            this.ratingTextBox.Location = new System.Drawing.Point(72, 198);
             this.ratingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ratingTextBox.Name = "ratingTextBox";
             this.ratingTextBox.Size = new System.Drawing.Size(161, 22);
@@ -78,7 +78,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 230);
+            this.label7.Location = new System.Drawing.Point(13, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 65;
@@ -87,7 +87,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 193);
+            this.label6.Location = new System.Drawing.Point(10, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 64;
@@ -96,7 +96,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 154);
+            this.label5.Location = new System.Drawing.Point(9, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 17);
             this.label5.TabIndex = 63;
@@ -105,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 79);
+            this.label4.Location = new System.Drawing.Point(24, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 62;
@@ -114,7 +114,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 116);
+            this.label3.Location = new System.Drawing.Point(14, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 61;
@@ -122,7 +122,7 @@
             // 
             // yearTextBox
             // 
-            this.yearTextBox.Location = new System.Drawing.Point(72, 75);
+            this.yearTextBox.Location = new System.Drawing.Point(72, 47);
             this.yearTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.yearTextBox.Name = "yearTextBox";
             this.yearTextBox.Size = new System.Drawing.Size(161, 22);
@@ -130,7 +130,7 @@
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(72, 36);
+            this.titleTextBox.Location = new System.Drawing.Point(72, 11);
             this.titleTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(161, 22);
@@ -139,7 +139,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 37);
+            this.label2.Location = new System.Drawing.Point(26, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 17);
             this.label2.TabIndex = 58;
@@ -147,7 +147,7 @@
             // 
             // addMovieButton
             // 
-            this.addMovieButton.Location = new System.Drawing.Point(72, 269);
+            this.addMovieButton.Location = new System.Drawing.Point(72, 248);
             this.addMovieButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addMovieButton.Name = "addMovieButton";
             this.addMovieButton.Size = new System.Drawing.Size(161, 44);
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 339);
+            this.ClientSize = new System.Drawing.Size(265, 303);
             this.Controls.Add(this.addMovieButton);
             this.Controls.Add(this.genreTextBox);
             this.Controls.Add(this.lengthTextBox);

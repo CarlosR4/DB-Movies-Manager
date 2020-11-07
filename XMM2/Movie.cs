@@ -8,6 +8,7 @@ namespace XMM2
 {
     class Movie
     {
+        public int id { get; set; }
         public string title { get; set; }
         public int year { get; set; }
         public TimeSpan length { get; set; }
@@ -17,7 +18,7 @@ namespace XMM2
 
         public Movie()
         {
-
+            id = 0;
             title = "";
             year = 0;
             length = new TimeSpan(0);
