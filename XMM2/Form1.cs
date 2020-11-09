@@ -15,9 +15,9 @@ namespace XMM2
     {
         //Constants to use when creating DB connections
         private const string DbServerHost = "localhost";
-        private const string DbUsername = "postgres";
-        private const string DbUuserPassword = "yvnft9k";
-        private const string DbName = "moviesdb";
+        private const string DbUsername = "username";
+        private const string DbUuserPassword = "password";
+        private const string DbName = "movie_db";
 
 
         NpgsqlConnection dbConnection;
@@ -34,7 +34,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "postgres", "yvnft9k", "moviesdb");
+            SetDBConnection("localhost", "username", "password", "movie_db");
             // =============================================================
 
 
@@ -78,7 +78,7 @@ namespace XMM2
             dbConnection.Open();
 
             //This is a string representing the SQL query to execute in the db            
-            string sqlQuery = "SELECT * FROM moviesdb.movieschema.movie;";
+            string sqlQuery = "SELECT * FROM movie_db.movieschema.movie;";
             Console.WriteLine("SQL Query: " + sqlQuery);
 
             //This is the actual SQL containing the query to be executed
@@ -132,7 +132,7 @@ namespace XMM2
             }
             catch
             {
-                MessageBox.Show("ERROR HERE");
+                //MessageBox.Show("ERROR HERE");
             }            
 
             //After executing the query(ies) in the db, the connection must be closed
@@ -162,7 +162,7 @@ namespace XMM2
 
             dbConnection2.Open();
 
-            string sqlQuery = "SELECT genre_code FROM moviesdb.movieschema.jt_genre_movie WHERE movie_id = " + movieID + ";";
+            string sqlQuery = "SELECT genre_code FROM movie_db.movieschema.jt_genre_movie WHERE movie_id = " + movieID + ";";
 
             Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -180,7 +180,7 @@ namespace XMM2
                 //Open a connection to access the 'genre' table
                 dbConnection3.Open();
 
-                sqlQuery = "SELECT * FROM moviesdb.movieschema.genre WHERE code = '" + currentGenreCode + "';";
+                sqlQuery = "SELECT * FROM movie_db.movieschema.genre WHERE code = '" + currentGenreCode + "';";
 
                 Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -231,7 +231,7 @@ namespace XMM2
 
             dbConnection2.Open();
 
-            string sqlQuery = "SELECT member_id FROM moviesdb.movieschema.jt_movie_meber WHERE movie_id = " + movieID + ";";
+            string sqlQuery = "SELECT member_id FROM movie_db.movieschema.jt_movie_meber WHERE movie_id = " + movieID + ";";
 
             Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -249,7 +249,7 @@ namespace XMM2
                 //Open a connection to access the 'genre' table
                 dbConnection3.Open();
 
-                sqlQuery = "SELECT * FROM moviesdb.movieschema.genre WHERE code = '" + currentGenreCode + "';";
+                sqlQuery = "SELECT * FROM movie_db.movieschema.genre WHERE code = '" + currentGenreCode + "';";
 
                 Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -663,7 +663,7 @@ namespace XMM2
                 int test = Movies.FindIndex(a => a.title == replacement);
 
                 //This is a string representing the SQL query to execute in the db            
-                string sqlQuery = "DELETE FROM  moviesdb.movieschema.movie WHERE id = '" + Movies[test].id + "';";
+                string sqlQuery = "DELETE FROM  movie_db.movieschema.movie WHERE id = '" + Movies[test].id + "';";
 
                 Console.WriteLine("SQL Query: " + sqlQuery);
 
@@ -673,7 +673,7 @@ namespace XMM2
                 
 
                 //This is a string representing the SQL query to execute in the db            
-                string sqlQuery2 = "DELETE FROM   moviesdb.movieschema.jt_genre_movie WHERE movie_id = '" + Movies[test].id + "';";
+                string sqlQuery2 = "DELETE FROM   movie_db.movieschema.jt_genre_movie WHERE movie_id = '" + Movies[test].id + "';";
 
                 Console.WriteLine("SQL Query: " + sqlQuery);
 
@@ -707,6 +707,21 @@ namespace XMM2
 
             getGenresFromDB();
 
+        }
+
+        private void addMemberButton_Click_1(object sender, EventArgs e)
+        {
+            AddMember addMember = new AddMember();
+
+            addMember.ShowDialog();
+
+            Members.Clear();
+
+            actorsListBox.Items.Clear();
+
+            
+
+            getMembersFromDB();
         }
     }
 }

@@ -17,9 +17,9 @@ namespace XMM2
 
         //Constants to use when creating DB connections
         private const string DbServerHost = "localhost";
-        private const string DbUsername = "postgres";
-        private const string DbUuserPassword = "yvnft9k";
-        private const string DbName = "moviesdb";
+        private const string DbUsername = "username";
+        private const string DbUuserPassword = "password";
+        private const string DbName = "movie_db";
 
         NpgsqlConnection dbConnection;
 
@@ -138,9 +138,9 @@ namespace XMM2
                 dbConnection3.Open();
 
                 //This is a string representing the SQL query to execute in the db
-                string addSqlQuery = "INSERT INTO moviesdb.movieschema.movie VALUES(" + "'" + biggestNumber + "', '" + title + "', '" + year + "', '" + length + "','" + rating + "','" + picture + "');";
+                string addSqlQuery = "INSERT INTO movie_db.movieschema.movie VALUES(" + "'" + biggestNumber + "', '" + title + "', '" + year + "', '" + length + "','" + rating + "','" + picture + "');";
 
-                string GenreSqlQuery = "INSERT INTO moviesdb.movieschema.jt_genre_movie VALUES(" + "'" + genre + "', '" + biggestNumber + "');";
+                string GenreSqlQuery = "INSERT INTO movie_db.movieschema.jt_genre_movie VALUES(" + "'" + genre + "', '" + biggestNumber + "');";
 
 
 
