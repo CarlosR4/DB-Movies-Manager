@@ -472,14 +472,34 @@ namespace XMM2
             //Connect to the database before sending commands
             dbConnection.Open();
 
-            //This is a string representing the SQL query to execute in the db            
-            string sqlQuery = "SELECT * FROM movieschema.member;";
-            Console.WriteLine("SQL Query: " + sqlQuery);
+            int index = moviesListView.FocusedItem.Index;
 
-            //This is the actual SQL containing the query to be executed
-            NpgsqlCommand dbCommand = new NpgsqlCommand(sqlQuery, dbConnection);
+            if (moviesListView.SelectedIndices.Count <= 0)
+            {
+                return;
+            }
 
-            dbCommand.ExecuteNonQuery();
+            int intselectedindex = moviesListView.SelectedIndices[0];
+
+
+            if (intselectedindex >= 0)
+            {
+                String text = moviesListView.Items[intselectedindex].Text;
+
+                string replacement = Regex.Replace(text, @"\t|\n|\r", "");
+
+                int test = Movies.FindIndex(a => a.title == replacement);
+
+                //This is a string representing the SQL query to execute in the db            
+                string sqlQuery = "DELETE FROM  moviesdb.movieschema.movie WHERE id = '" + Movies[test].id + "';";
+
+                Console.WriteLine("SQL Query: " + sqlQuery);
+
+                //This is the actual SQL containing the query to be executed
+                NpgsqlCommand dbCommand = new NpgsqlCommand(sqlQuery, dbConnection);
+
+                dbCommand.ExecuteNonQuery();
+            }
 
             //After executing the query(ies) in the db, the connection must be closed
             dbConnection.Close();
@@ -487,6 +507,7 @@ namespace XMM2
 
         private void AddGenreButton_Click(object sender, EventArgs e)
         {
+            int selected = actorsListBox.SelectedIndex;
 
         }
     }

@@ -112,6 +112,7 @@
             this.Controls.Add(this.label5);
             this.Name = "AddGenre";
             this.Text = "AddGenre";
+            this.Load += new System.EventHandler(this.AddGenre_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

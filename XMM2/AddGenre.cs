@@ -16,5 +16,10 @@ namespace XMM2
         {
             InitializeComponent();
         }
+
+        private void AddGenre_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
