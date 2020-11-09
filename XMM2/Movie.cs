@@ -15,7 +15,8 @@ namespace XMM2
         public string director { get; set; }
         public double rating { get; set; }
         public string imagePath { get; set; }
-
+        public List<Genre> Genres { get; set; }
+        public List<Member> Members { get; set; }
         public Movie()
         {
             id = 0;
@@ -25,7 +26,8 @@ namespace XMM2
             director = "";
             rating = 0;
             imagePath = "";
-
+            Genres = new List<Genre>();
+            Members = new List<Member>();
         }
     }
 }

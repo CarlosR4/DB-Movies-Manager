@@ -410,6 +410,8 @@
             // 
             this.genreListBox.FormattingEnabled = true;
             this.genreListBox.ItemHeight = 16;
+            this.genreListBox.Items.AddRange(new object[] {
+            "ALL"});
             this.genreListBox.Location = new System.Drawing.Point(1068, 53);
             this.genreListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.genreListBox.Name = "genreListBox";
