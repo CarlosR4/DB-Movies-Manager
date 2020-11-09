@@ -59,7 +59,7 @@ namespace XMM2
             dbConnection.Open();
 
             //This is a string representing the SQL query to execute in the db            
-            string sqlQuery = "SELECT * FROM movieschema.movie;";
+            string sqlQuery = "SELECT * FROM moviesdb.movieschema.movie;";
             Console.WriteLine("SQL Query: " + sqlQuery);
 
             //This is the actual SQL containing the query to be executed
@@ -85,19 +85,33 @@ namespace XMM2
                     currentMovie.length = dataReader.GetTimeSpan(3);
                     //currentMovie.director = dataReader.GetString(4);
                     currentMovie.rating = dataReader.GetDouble(4);
-                    currentMovie.imagePath = dataReader.GetString(5);
-                    Console.WriteLine("image = " + currentMovie.imagePath);
+                    if (dataReader.GetString(5)=="")
+                    {
+                        currentMovie.imagePath = @"images\noimage.jpg";
+                        movieImageList.Images.Add(Image.FromFile(currentMovie.imagePath.ToString()));
+                        Movies.Add(currentMovie);
+                    }
 
-                    movieImageList.Images.Add(Image.FromFile(currentMovie.imagePath.ToString()));
+                    else
+                    {
+                        currentMovie.imagePath = dataReader.GetString(5);
+                        movieImageList.Images.Add(Image.FromFile(currentMovie.imagePath.ToString()));
+                        Movies.Add(currentMovie);
+                    }
+
+                    Console.WriteLine("image = " + currentMovie.imagePath);
 
 
                     Console.WriteLine("Title = " + currentMovie.title);
 
-                    Movies.Add(currentMovie);
+                    //Movies.Add(currentMovie);
 
                 }
             }
-            catch{}            
+            catch
+            {
+                MessageBox.Show("ERROR HERE");
+            }            
 
             //After executing the query(ies) in the db, the connection must be closed
             dbConnection.Close();
@@ -429,6 +443,51 @@ namespace XMM2
 
             }
             */
+        }
+
+        private void GenreListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            moviesListView.Items.Clear();
+
+            string selected = genreListBox.SelectedItem.ToString();
+
+            /*
+            foreach (Movie entry in Movies)
+            {
+                if (entry.Genre == selected)
+                {
+                    moviesListBox.Items.Add(entry.Title);
+                }
+
+                else if (selected == "All")
+                {
+                    moviesListBox.Items.Add(entry.Title);
+                }
+            }
+            */
+        }
+
+        private void DeleteMovieButton_Click(object sender, EventArgs e)
+        {
+            //Connect to the database before sending commands
+            dbConnection.Open();
+
+            //This is a string representing the SQL query to execute in the db            
+            string sqlQuery = "SELECT * FROM movieschema.member;";
+            Console.WriteLine("SQL Query: " + sqlQuery);
+
+            //This is the actual SQL containing the query to be executed
+            NpgsqlCommand dbCommand = new NpgsqlCommand(sqlQuery, dbConnection);
+
+            dbCommand.ExecuteNonQuery();
+
+            //After executing the query(ies) in the db, the connection must be closed
+            dbConnection.Close();
+        }
+
+        private void AddGenreButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

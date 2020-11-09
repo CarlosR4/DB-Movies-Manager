@@ -14,6 +14,7 @@ namespace XMM2
 {
     public partial class AddMovieForm : Form
     {
+
         //Constants to use when creating DB connections
         private const string DbServerHost = "localhost";
         private const string DbUsername = "postgres";
@@ -36,6 +37,8 @@ namespace XMM2
 
         private void AddMovieButton_Click(object sender, EventArgs e)
         {
+            Movies.Clear();
+
             //This variable will store the number of affecter rows by the INSERT query
             int queryResult;
 
@@ -112,44 +115,60 @@ namespace XMM2
             Console.WriteLine(biggestNumber);
 
             biggestNumber++;
-            
+
+            try
+            {
+                string title = titleTextBox.Text;
+                int year;
+                bool ifyear = int.TryParse(yearTextBox.Text, out year);
+                if (!ifyear)
+                {
+                    MessageBox.Show("Invalid Year");
+                }
+                string genre = genreTextBox.Text;
+                string length = lengthTextBox.Text;
+                string picture = pictureTextBox.Text;
+                int rating;
+                bool ifRating = int.TryParse(ratingTextBox.Text, out rating);
+                if (!ifRating)
+                {
+                    MessageBox.Show("Invalid Rating");
+                }
+
+                dbConnection2.Open();
+
+                dbConnection3.Open();
+
+                //This is a string representing the SQL query to execute in the db
+                string addSqlQuery = "INSERT INTO moviesdb.movieschema.movie VALUES(" + "'" + biggestNumber + "', '" + title + "', '" + year + "', '" + length + "','" + rating + "','" + picture + "');";
+
+                string GenreSqlQuery = "INSERT INTO moviesdb.movieschema.jt_genre_movie VALUES(" + "'" + genre + "', '" + biggestNumber + "');";
 
 
-            string title = titleTextBox.Text;
-            int year = int.Parse(yearTextBox.Text);
-            string genre = genreTextBox.Text;
-            string length = lengthTextBox.Text;
-            string picture = pictureTextBox.Text;
-            int rating = int.Parse(ratingTextBox.Text);
 
-            dbConnection2.Open();
+                //Console.WriteLine("Affected rows: " + queryResult);
 
+                //This is the actual SQL containing the query to be executed
+                dbCommand3 = new NpgsqlCommand(addSqlQuery, dbConnection3);
 
-            //This is a string representing the SQL query to execute in the db
-            string addSqlQuery = "INSERT INTO movie VALUES("+"'" + biggestNumber + "', '" + title + "', '" + year + "', '" + length +"','"+ rating + "','"+ picture +"');";
+                //This variable stores the result of the SQL query sent to the db
+                dbCommand3.ExecuteNonQuery();
 
-            string GenreSqlQuery = "INSERT INTO jt_genre_movie VALUES(" +"'" + genre + "', '" + biggestNumber + "');";
+                //This is the actual SQL containing the query to be executed
+                dbCommand2 = new NpgsqlCommand(GenreSqlQuery, dbConnection2);
 
-            //This is the actual SQL containing the query to be executed
-            dbCommand2 = new NpgsqlCommand(GenreSqlQuery, dbConnection2);
+                //This variable stores the result of the SQL query sent to the db
+                dbCommand2.ExecuteNonQuery();
 
-            //This variable stores the result of the SQL query sent to the db
-            dbCommand2.ExecuteNonQuery();
+                //After executing the query(ies) in the db, the connection must be closed
+                dbConnection2.Close();
+                dbConnection3.Close();
+            }
 
-            //Console.WriteLine("Affected rows: " + queryResult);
-
-            //This is the actual SQL containing the query to be executed
-            dbCommand3 = new NpgsqlCommand(addSqlQuery, dbConnection3);
-
-            //This variable stores the result of the SQL query sent to the db
-            dbCommand3.ExecuteNonQuery();
-
-            
-
-            //After executing the query(ies) in the db, the connection must be closed
-            dbConnection2.Close();
-            dbConnection3.Close();
-
+            catch
+            {
+                MessageBox.Show("ERROR PLEASE TRY AGAIN");
+            }
         }
 
         private void SetDBConnection(String serverAddress, string username, string passwd, string dbName)
