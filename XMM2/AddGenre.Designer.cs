@@ -46,6 +46,7 @@
             this.addGenreButton.TabIndex = 77;
             this.addGenreButton.Text = "Add Genre";
             this.addGenreButton.UseVisualStyleBackColor = true;
+            this.addGenreButton.Click += new System.EventHandler(this.AddGenreButton_Click);
             // 
             // codeTextBox
             // 

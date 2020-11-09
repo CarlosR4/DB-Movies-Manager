@@ -52,12 +52,10 @@ namespace XMM2
             //The following Connection, Command and DataReader objects will be used to access the jt_genre_movie table
             NpgsqlConnection dbConnection2 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
             NpgsqlCommand dbCommand2;
-            NpgsqlDataReader dataReader2;
 
             //The following Connection, Command and DataReader objects will be used to access the genre table
             NpgsqlConnection dbConnection3 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
             NpgsqlCommand dbCommand3;
-            NpgsqlDataReader dataReader3;
 
             dbConnection1.Open();
 

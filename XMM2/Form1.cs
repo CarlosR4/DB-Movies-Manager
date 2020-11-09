@@ -13,6 +13,13 @@ namespace XMM2
 {
     public partial class Form1 : Form
     {
+        //Constants to use when creating DB connections
+        private const string DbServerHost = "localhost";
+        private const string DbUsername = "postgres";
+        private const string DbUuserPassword = "yvnft9k";
+        private const string DbName = "moviesdb";
+
+
         NpgsqlConnection dbConnection;
 
         List<Movie> Movies = new List<Movie>();
@@ -51,8 +58,20 @@ namespace XMM2
 
             dbConnection = new NpgsqlConnection(conectionString);
         }
+
+        private NpgsqlConnection CreateDBConnection(string serverAddress, string username, string passwd, string dbName)
+        {
+            string conectionString = "Host=" + serverAddress + "; Username=" + username + "; Password=" + passwd + "; Database=" + dbName + ";";
+
+            dbConnection = new NpgsqlConnection(conectionString);
+
+            return dbConnection;
+        }
         private void getMoviesFromDB()
         {
+
+            Movies.Clear();
+
             Movie currentMovie;
 
             //Connect to the database before sending commands
@@ -469,8 +488,16 @@ namespace XMM2
 
         private void DeleteMovieButton_Click(object sender, EventArgs e)
         {
-            //Connect to the database before sending commands
-            dbConnection.Open();
+            //The following Connection, Command and DataReader objects will be used to access the jt_genre_movie table
+            NpgsqlConnection dbConnection1 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
+            NpgsqlCommand dbCommand1;
+
+            //The following Connection, Command and DataReader objects will be used to access the jt_genre_movie table
+            NpgsqlConnection dbConnection2 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
+            NpgsqlCommand dbCommand2;
+
+            dbConnection1.Open();
+            dbConnection2.Open();
 
             int index = moviesListView.FocusedItem.Index;
 
@@ -496,18 +523,44 @@ namespace XMM2
                 Console.WriteLine("SQL Query: " + sqlQuery);
 
                 //This is the actual SQL containing the query to be executed
-                NpgsqlCommand dbCommand = new NpgsqlCommand(sqlQuery, dbConnection);
+                dbCommand1 = new NpgsqlCommand(sqlQuery, dbConnection1);
 
-                dbCommand.ExecuteNonQuery();
+                
+
+                //This is a string representing the SQL query to execute in the db            
+                string sqlQuery2 = "DELETE FROM   moviesdb.movieschema.jt_genre_movie WHERE movie_id = '" + Movies[test].id + "';";
+
+                Console.WriteLine("SQL Query: " + sqlQuery);
+
+                //This is the actual SQL containing the query to be executed
+                dbCommand2 = new NpgsqlCommand(sqlQuery2, dbConnection2);
+
+                dbCommand2.ExecuteNonQuery();
+
+                dbCommand1.ExecuteNonQuery();
             }
 
             //After executing the query(ies) in the db, the connection must be closed
-            dbConnection.Close();
+            dbConnection1.Close();
+            dbConnection2.Close();
+
+
+            moviesListView.Items.Clear();
+
+            getMoviesFromDB();
         }
 
         private void AddGenreButton_Click(object sender, EventArgs e)
         {
-            int selected = actorsListBox.SelectedIndex;
+            AddGenre addMovie = new AddGenre();
+
+            addMovie.ShowDialog();
+
+            Genres.Clear();
+
+            genreListBox.Items.Clear();
+
+            getGenresFromDB();
 
         }
     }
