@@ -376,6 +376,10 @@ namespace XMM2
 
         private void getMembersFromDB()
         {
+            Members.Clear();
+
+            memberListBox.Items.Clear();
+
             Member currentMember;
 
             //Connect to the database before sending commands
@@ -513,7 +517,7 @@ namespace XMM2
                     getMember = (Member)Members[selected];
 
                     //  TextBoxes to display information requested
-                    t.Text = getMember.name;
+                    label17.Text = getMember.name;
                     label18.Text = getMember.dob.ToString();
 
                     //  Check assigned integer for each member type and display correct string
@@ -835,31 +839,23 @@ namespace XMM2
             NpgsqlCommand dbCommand1;
             NpgsqlDataReader dataReader1;
 
-            //The following Connection, Command and DataReader objects will be used to access the jt_genre_movie table
-            NpgsqlConnection dbConnection2 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
-            NpgsqlCommand dbCommand2;
-
-            //The following Connection, Command and DataReader objects will be used to access the genre table
-            NpgsqlConnection dbConnection3 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
-            NpgsqlCommand dbCommand3;
-
             dbConnection1.Open();
 
 
             //This is a string representing the SQL query to execute in the db            
-            string sqlQuery = "UPDATE member SET name = '" + titleTextBox.Text + "' WHERE name =  '" + Members[index].name + "';" +
-                              "UPDATE member SET date_of_birth = '" + yearTextBox.Text + "' WHERE date_of_birth =  '" + Members[index].dob + "';" +
-                              "UPDATE member SET member_type_id = '" + lengthTextBox.Text + "' WHERE member_type_id =  '" + Members[index].memberType + "';" +
-                              "UPDATE member SET image_file_path = '" + pictureTextBox.Text + "' WHERE image_file_path =  '" + Members[index].imagepath + "';";
+            string sqlQuery = "UPDATE member SET name = '" + label17.Text + "' WHERE name =  '" + Members[index].name + "';" +
+                              "UPDATE member SET date_of_birth = '" + label18.Text + "' WHERE date_of_birth =  '" + Members[index].dob + "';" +
+                              "UPDATE member SET member_type_id = '" + label10.Text + "' WHERE member_type_id =  '" + Members[index].memberType + "';" +
+                              "UPDATE member SET image_file_path = '" + Members[index].imagepath + "' WHERE image_file_path =  '" + Members[index].imagepath + "';";
 
-            Console.WriteLine("SQL Query: " + sqlQuery);
+            //Console.WriteLine("SQL Query: " + sqlQuery);
 
             //This is the actual SQL containing the query to be executed
             dbCommand1 = new NpgsqlCommand(sqlQuery, dbConnection1);
 
             bool Read;
 
-            if (titleTextBox.Enabled == false)
+            if (label17.Enabled == false)
             {
                 Read = false;
                 Console.WriteLine(Read);
@@ -884,7 +880,7 @@ namespace XMM2
                 dbCommand1.ExecuteNonQuery();
                 dbConnection1.Close();
 
-                getMoviesFromDB();
+                getMembersFromDB();
                 Console.WriteLine("EXECUTED");
                 label17.Enabled = false;
                 label18.Enabled = false;
