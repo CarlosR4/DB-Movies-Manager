@@ -769,7 +769,11 @@ namespace XMM2
             string oldmovie = titleTextBox.Text;
 
             //This is a string representing the SQL query to execute in the db            
-            string sqlQuery = "UPDATE moviesdb.movieschema.movie SET title = '"+titleTextBox.Text +"' WHERE title =  '"+ Movies[SelectedMovie].title + "';";
+            string sqlQuery = "UPDATE movie SET title = '" + titleTextBox.Text +"' WHERE title =  '"+ Movies[SelectedMovie].title + "';"+
+                              "UPDATE movie SET year = '" + yearTextBox.Text + "' WHERE year =  '" + Movies[SelectedMovie].year + "';"+
+                              "UPDATE movie SET length = '" + lengthTextBox.Text + "' WHERE length =  '" + Movies[SelectedMovie].length + "';" +
+                              "UPDATE movie SET audience_rating = '" + ratingTextBox.Text + "' WHERE audience_rating =  '" + Movies[SelectedMovie].rating + "';"+
+                              "UPDATE movie SET image_file_path = '" + pictureTextBox.Text + "' WHERE image_file_path =  '" + Movies[SelectedMovie].imagePath + "';";
 
             string ALLsqlQuery = "Select * moviesdb.movieschema.movie SET title = '" + titleTextBox.Text + "' WHERE title =  '" + Movies[SelectedMovie].title + "';";
 
