@@ -108,6 +108,8 @@ namespace XMM2
 
                     currentMovie.Genres = LoadMovieGenres(currentMovie.id); 
 
+                    currentMovie.Members = LoadMovieMembers(currentMovie.id);
+
                     if (dataReader.GetString(5)=="")
                     {
                         currentMovie.imagePath = @"images\noimage.jpg";
@@ -211,74 +213,72 @@ namespace XMM2
             return GenreList;
         }
 
-        private List<Genre> LoadMovieMembers(int movieID)
+        private List<Member> LoadMovieMembers(int movieID)
         {
             //The following Connection, Command and DataReader objects will be used to access the jt_genre_movie table
-            NpgsqlConnection dbConnection2 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
-            NpgsqlCommand dbCommand2;
-            NpgsqlDataReader dataReader2;
+            NpgsqlConnection dbConnection4 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
+            NpgsqlCommand dbCommand4;
+            NpgsqlDataReader dataReader4;
 
             //The following Connection, Command and DataReader objects will be used to access the genre table
-            NpgsqlConnection dbConnection3 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
-            NpgsqlCommand dbCommand3;
-            NpgsqlDataReader dataReader3;
+            NpgsqlConnection dbConnection5 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
+            NpgsqlCommand dbCommand5;
+            NpgsqlDataReader dataReader5;
 
 
-            string currentGenreCode;
+            int currentMemberId;
 
-            Genre currentGenre;
+            Member currentMember;
 
-            List<Genre> GenreList = new List<Genre>();
+            List<Member> memberList = new List<Member>();
 
-            dbConnection2.Open();
+            dbConnection4.Open();
 
-            string sqlQuery = "SELECT member_id FROM moviesdb.movieschema.jt_movie_meber WHERE movie_id = " + movieID + ";";
+            string sqlQuery = "SELECT member_id FROM moviesdb.movieschema.jt_movie_member WHERE movie_id = '" + movieID + "';";
 
             Console.WriteLine("sqlQuery = " + sqlQuery);
 
-            dbCommand2 = new NpgsqlCommand(sqlQuery, dbConnection2);
+            dbCommand4 = new NpgsqlCommand(sqlQuery, dbConnection4);
 
-            dataReader2 = dbCommand2.ExecuteReader();
+            dataReader4 = dbCommand4.ExecuteReader();
 
             //While there are genre_codes in the dataReader2
-            while (dataReader2.Read())
+            while (dataReader4.Read())
             {
-                currentGenre = new Genre();
+                currentMember = new Member();
 
-                currentGenreCode = dataReader2.GetString(0);
+                currentMemberId = dataReader4.GetInt32(0);
 
                 //Open a connection to access the 'genre' table
-                dbConnection3.Open();
+                dbConnection5.Open();
 
-                sqlQuery = "SELECT * FROM moviesdb.movieschema.genre WHERE code = '" + currentGenreCode + "';";
+                sqlQuery = "SELECT * FROM moviesdb.movieschema.member WHERE member_id = '" + currentMemberId + "';";
 
                 Console.WriteLine("sqlQuery = " + sqlQuery);
 
-                dbCommand3 = new NpgsqlCommand(sqlQuery, dbConnection3);
+                dbCommand5 = new NpgsqlCommand(sqlQuery, dbConnection5);
 
-                dataReader3 = dbCommand3.ExecuteReader();
+                dataReader5 = dbCommand5.ExecuteReader();
 
                 //Read a line from the 'genre' table
-                dataReader3.Read();
+                dataReader5.Read();
 
-                currentGenre.code = dataReader3.GetString(0);
-                currentGenre.name = dataReader3.GetString(1);
-                currentGenre.description = dataReader3.GetString(2);
+                currentMember.id = dataReader5.GetInt32(0);
+                currentMember.name = dataReader5.GetString(1);
+                currentMember.dob = dataReader5.GetDateTime(2);
+                currentMember.memberType = dataReader5.GetInt32(3);
 
-                Console.WriteLine("currentGenre = " + currentGenre.code + " - " + currentGenre.name + " - " + currentGenre.description);
 
-                //dbCommand3.Dispose();
-                //dataReader3.Close();
+                memberList.Add(currentMember);
 
-                GenreList.Add(currentGenre);
-
-                dbConnection3.Close();
+                dbConnection5.Close();
             }
 
-            dbConnection2.Close();
+            dbConnection4.Close();
 
-            return GenreList;
+            return memberList;
         }
+
         private void DisplayMovies()
         {
             for (int i = 0; i < Movies.Count; i++)
@@ -458,6 +458,8 @@ namespace XMM2
                     int test = Movies.FindIndex(a => a.title == replacement);
 
                     moviePictureBox.Image = movieImageList.Images[test];
+
+                    memberListBox.Items.Add(Movies[test].Members);
                 }
 
                 for (int i = 0; i < moviesListView.Items.Count; i++)
