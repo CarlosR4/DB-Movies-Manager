@@ -201,7 +201,7 @@ namespace XMM2
                 Console.WriteLine("currentGenre = " + currentGenre.code + " - " + currentGenre.name + " - " + currentGenre.description);
 
                 //dbCommand3.Dispose();
-                //dataReader3.Close();
+                ///dataReader3.Close();
 
                 GenreList.Add(currentGenre);
 
