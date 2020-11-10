@@ -15,9 +15,9 @@ namespace XMM2
     {
         //Constants to use when creating DB connections
         private const string DbServerHost = "localhost";
-        private const string DbUsername = "username";
-        private const string DbUuserPassword = "password";
-        private const string DbName = "movie_db";
+        private const string DbUsername = "postgres";
+        private const string DbUuserPassword = "yvnft9k";
+        private const string DbName = "moviesdb";
 
 
         NpgsqlConnection dbConnection;
@@ -34,7 +34,7 @@ namespace XMM2
             // CHANGE THIS VALUE TO YOUR DATAGRIP CONFIG
             //             == FORMAT ==
             // ( host_name, username, password, db_name )
-            SetDBConnection("localhost", "username", "password", "movie_db");
+            SetDBConnection("localhost", "postgres", "yvnft9k", "moviesdb");
             // =============================================================
 
 
@@ -69,6 +69,7 @@ namespace XMM2
         }
         private void getMoviesFromDB()
         {
+            moviesListView.Items.Clear();
 
             Movies.Clear();
 
@@ -78,7 +79,7 @@ namespace XMM2
             dbConnection.Open();
 
             //This is a string representing the SQL query to execute in the db            
-            string sqlQuery = "SELECT * FROM movie_db.movieschema.movie;";
+            string sqlQuery = "SELECT * FROM moviesdb.movieschema.movie;";
             Console.WriteLine("SQL Query: " + sqlQuery);
 
             //This is the actual SQL containing the query to be executed
@@ -162,7 +163,7 @@ namespace XMM2
 
             dbConnection2.Open();
 
-            string sqlQuery = "SELECT genre_code FROM movie_db.movieschema.jt_genre_movie WHERE movie_id = " + movieID + ";";
+            string sqlQuery = "SELECT genre_code FROM moviesdb.movieschema.jt_genre_movie WHERE movie_id = " + movieID + ";";
 
             Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -180,7 +181,7 @@ namespace XMM2
                 //Open a connection to access the 'genre' table
                 dbConnection3.Open();
 
-                sqlQuery = "SELECT * FROM movie_db.movieschema.genre WHERE code = '" + currentGenreCode + "';";
+                sqlQuery = "SELECT * FROM moviesdb.movieschema.genre WHERE code = '" + currentGenreCode + "';";
 
                 Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -231,7 +232,7 @@ namespace XMM2
 
             dbConnection2.Open();
 
-            string sqlQuery = "SELECT member_id FROM movie_db.movieschema.jt_movie_meber WHERE movie_id = " + movieID + ";";
+            string sqlQuery = "SELECT member_id FROM moviesdb.movieschema.jt_movie_meber WHERE movie_id = " + movieID + ";";
 
             Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -249,7 +250,7 @@ namespace XMM2
                 //Open a connection to access the 'genre' table
                 dbConnection3.Open();
 
-                sqlQuery = "SELECT * FROM movie_db.movieschema.genre WHERE code = '" + currentGenreCode + "';";
+                sqlQuery = "SELECT * FROM moviesdb.movieschema.genre WHERE code = '" + currentGenreCode + "';";
 
                 Console.WriteLine("sqlQuery = " + sqlQuery);
 
@@ -663,7 +664,7 @@ namespace XMM2
                 int test = Movies.FindIndex(a => a.title == replacement);
 
                 //This is a string representing the SQL query to execute in the db            
-                string sqlQuery = "DELETE FROM  movie_db.movieschema.movie WHERE id = '" + Movies[test].id + "';";
+                string sqlQuery = "DELETE FROM  moviesdb.movieschema.movie WHERE id = '" + Movies[test].id + "';";
 
                 Console.WriteLine("SQL Query: " + sqlQuery);
 
@@ -673,7 +674,7 @@ namespace XMM2
                 
 
                 //This is a string representing the SQL query to execute in the db            
-                string sqlQuery2 = "DELETE FROM   movie_db.movieschema.jt_genre_movie WHERE movie_id = '" + Movies[test].id + "';";
+                string sqlQuery2 = "DELETE FROM   moviesdb.movieschema.jt_genre_movie WHERE movie_id = '" + Movies[test].id + "';";
 
                 Console.WriteLine("SQL Query: " + sqlQuery);
 
@@ -722,6 +723,100 @@ namespace XMM2
             
 
             getMembersFromDB();
+        }
+
+        
+
+        private void ModifyMovieButton_Click(object sender, EventArgs e)
+        {
+            int index = moviesListView.FocusedItem.Index;
+
+            if (moviesListView.SelectedIndices.Count <= 0)
+            {
+                return;
+            }
+
+            int intselectedindex = moviesListView.SelectedIndices[0];
+
+            int SelectedMovie=0;
+
+            if (intselectedindex >= 0)
+            {
+                String text = moviesListView.Items[intselectedindex].Text;
+
+                string replacement = Regex.Replace(text, @"\t|\n|\r", "");
+
+                int test = Movies.FindIndex(a => a.title == replacement);
+
+                SelectedMovie = test;
+
+            }
+                //The following Connection, Command and DataReader objects will be used to access the jt_genre_movie table
+                NpgsqlConnection dbConnection1 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
+            NpgsqlCommand dbCommand1;
+            NpgsqlDataReader dataReader1;
+
+            //The following Connection, Command and DataReader objects will be used to access the jt_genre_movie table
+            NpgsqlConnection dbConnection2 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
+            NpgsqlCommand dbCommand2;
+
+            //The following Connection, Command and DataReader objects will be used to access the genre table
+            NpgsqlConnection dbConnection3 = CreateDBConnection(DbServerHost, DbUsername, DbUuserPassword, DbName);
+            NpgsqlCommand dbCommand3;
+
+            dbConnection1.Open();
+
+            string oldmovie = titleTextBox.Text;
+
+            //This is a string representing the SQL query to execute in the db            
+            string sqlQuery = "UPDATE moviesdb.movieschema.movie SET title = '"+titleTextBox.Text +"' WHERE title =  '"+ Movies[SelectedMovie].title + "';";
+
+            string ALLsqlQuery = "Select * moviesdb.movieschema.movie SET title = '" + titleTextBox.Text + "' WHERE title =  '" + Movies[SelectedMovie].title + "';";
+
+            Console.WriteLine("SQL Query: " + sqlQuery);
+
+            //This is the actual SQL containing the query to be executed
+            dbCommand1 = new NpgsqlCommand(sqlQuery, dbConnection1);
+
+            bool Read;
+
+            if (titleTextBox.Enabled==false)
+            {
+                Read = false;
+                Console.WriteLine(Read);
+            }
+
+            else
+            {
+                Read = true;
+                Console.WriteLine(Read);
+            }
+
+            if(Read==false)
+            {
+                Console.WriteLine("Not executed");
+                titleTextBox.Enabled = true;
+                yearTextBox.Enabled = true;
+                genreTextBox.Enabled = true;
+                lengthTextBox.Enabled = true;
+                pictureTextBox.Enabled = true;
+                ratingTextBox.Enabled = true;
+            }
+
+            else if (Read ==true)
+            {
+                dbCommand1.ExecuteNonQuery();
+                dbConnection1.Close();
+                
+                getMoviesFromDB();
+                Console.WriteLine("EXECUTED");
+                titleTextBox.Enabled = false;
+                yearTextBox.Enabled = false;
+                genreTextBox.Enabled = false;
+                lengthTextBox.Enabled = false;
+                pictureTextBox.Enabled = false;
+                ratingTextBox.Enabled = false;
+            }
         }
     }
 }
